@@ -12,6 +12,7 @@ A step by step series of examples that tell you how to get a development env run
 
 ## Authors
 Savostyanov Vitaliy @Savital
+Sergey Napreev @napreev
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
