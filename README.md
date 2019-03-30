@@ -11,8 +11,8 @@ What things you need to install the software and how to install them
 A step by step series of examples that tell you how to get a development env running
 
 ## Authors
-Savostyanov Vitaliy @Savital
-Sergey Napreev @napreev
+* Savostyanov Vitaliy @Savital
+* Sergey Napreev @napreev
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
