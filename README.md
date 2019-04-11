@@ -14,7 +14,7 @@ A step by step series of examples that tell you how to get a development env run
 * Savostyanov Vitaliy [@Savital](https://github.com/Savital)
 * Sergey Napreev [@ssergius](https://github.com/ssergius)
 * Alexander Pak [@Oddush](https://github.com/Oddush)
-* Kulnev Oleg [@Linonse](https://github.com/@Linonse)
+* Kulnev Oleg [@Linonse](https://github.com/Linonse)
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
