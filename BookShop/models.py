@@ -65,3 +65,14 @@ class Shop(models.Model):
     class Meta:
         verbose_name = 'Shop'
         verbose_name_plural = 'Shops'
+
+class Relations(models.Model):
+    id = models.Index
+    shop_id = models.ForeignKey(Shop, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "Relation %s" % self.id
+
+    class Meta:
+        verbose_name = 'Relation'
+        verbose_name_plural = 'Relations'
