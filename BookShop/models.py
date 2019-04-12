@@ -102,3 +102,14 @@ class Staff(models.Model):
     class Meta:
         verbose_name = 'Staff'
         verbose_name_plural = 'Staff'
+
+class Category(models.Model):
+    category = models.CharField(max_length=30)
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="Product")
+
+    def __str__(self):
+        return "Category %s" % self.category
+
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
