@@ -52,3 +52,16 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
+
+class Shop(models.Model):
+    shop_id = models.Index
+    name = models.CharField(max_length=255)
+    tel = models.CharField(max_length=12)
+    email = models.EmailField
+
+    def __str__(self):
+        return "Shop %s" % self.id
+
+    class Meta:
+        verbose_name = 'Shop'
+        verbose_name_plural = 'Shops'
