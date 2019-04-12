@@ -25,3 +25,15 @@ class Order(models.Model): #TODO
     class Meta:
         verbose_name = 'Order'
         verbose_name_plural = 'Orders'
+
+class Producers(models.Model):
+    producer_id = models.Index
+    name = models.CharField(max_length=255)
+    country = models.CharField(max_length=255)
+
+    def __str__(self):
+        return "Producer %s" % self.id
+
+    class Meta:
+        verbose_name = 'Producer'
+        verbose_name_plural = 'Producers'
