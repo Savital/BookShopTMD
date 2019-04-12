@@ -55,9 +55,49 @@ class RelationsAdmin(admin.ModelAdmin):
     class Meta:
         model = Relations    
 
+class StockAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Stock._meta.fields]
+    search_fields = [field.name for field in Stock._meta.fields]
+    list_filter = [field.name for field in Stock._meta.fields]
+    exclude = []
+
+    class Meta:
+        model = Stock
+
+class StaffAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Staff._meta.fields]
+    search_fields = [field.name for field in Staff._meta.fields]
+    list_filter = [field.name for field in Staff._meta.fields]
+    exclude = []
+
+    class Meta:
+        model = Staff
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Category._meta.fields]
+    search_fields = [field.name for field in Category._meta.fields]
+    list_filter = [field.name for field in Category._meta.fields]
+    exclude = []
+
+    class Meta:
+        model = Category
+
+class OrderProductAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in OrderProduct._meta.fields]
+    search_fields = [field.name for field in OrderProduct._meta.fields]
+    list_filter = [field.name for field in OrderProduct._meta.fields]
+    exclude = []
+
+    class Meta:
+        model = OrderProduct        
+        
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Producers, ProducersAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Shop, ShopAdmin)
 admin.site.register(Relations, RelationsAdmin)
+admin.site.register(Stock, StockAdmin)
+admin.site.register(Staff, StaffAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(OrderProduct, OrderProductAdmin)
