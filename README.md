@@ -11,10 +11,10 @@ What things you need to install the software and how to install them
 A step by step series of examples that tell you how to get a development env running
 
 ## Authors
-* Savostyanov Vitaliy @Savital
-* Sergey Napreev @ssergius
-* Alexander Pak @Oddush
-* Kulnev Oleg @Linonse
+* Savostyanov Vitaliy [@Savital](https://github.com/Savital)
+* Sergey Napreev [@ssergius](https://github.com/ssergius)
+* Alexander Pak [@Oddush](https://github.com/Oddush)
+* Kulnev Oleg [@Linonse](https://github.com/Linonse)
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
