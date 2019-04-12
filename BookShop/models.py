@@ -12,3 +12,16 @@ class Customer(models.Model):
     class Meta:
         verbose_name = 'Customer'
         verbose_name_plural = 'Customers'
+
+class Order(models.Model): #TODO
+    order_id = models.Index
+    customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE, default=0)
+    date = models.DateField(auto_now_add=True, auto_now=False)
+    time = models.TimeField(auto_now_add=True, auto_now=False)
+
+    def __str__(self):
+        return "Order %s" % self.id
+
+    class Meta:
+        verbose_name = 'Order'
+        verbose_name_plural = 'Orders'

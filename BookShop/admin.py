@@ -10,4 +10,14 @@ class CustomerAdmin(admin.ModelAdmin):
     class Meta:
         model = Customer
 
+class OrderAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Order._meta.fields]
+    search_fields = [field.name for field in Order._meta.fields]
+    list_filter = [field.name for field in Order._meta.fields]
+    exclude = []
+
+    class Meta:
+        model = Order
+
 admin.site.register(Customer, CustomerAdmin)
+admin.site.register(Order, OrderAdmin)
