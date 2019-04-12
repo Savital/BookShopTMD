@@ -18,6 +18,16 @@ class OrderAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Order
+        
+class ProducersAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Producers._meta.fields]
+    search_fields = [field.name for field in Producers._meta.fields]
+    list_filter = [field.name for field in Producers._meta.fields]
+    exclude = []
+
+    class Meta:
+        model = Producers
 
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Order, OrderAdmin)
+admin.site.register(Producers, ProducersAdmin)
