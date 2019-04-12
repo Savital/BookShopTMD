@@ -87,3 +87,18 @@ class Stock(models.Model):
     class Meta:
         verbose_name = 'Stock'
         verbose_name_plural = 'Stocks'
+
+class Staff(models.Model):
+    id = models.Index
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    birth = models.DateField
+    passport = models.CharField(max_length=10)
+    tel = models.CharField(max_length=12)
+
+    def __str__(self):
+        return "Staff %s" % self.id
+
+    class Meta:
+        verbose_name = 'Staff'
+        verbose_name_plural = 'Staff'
