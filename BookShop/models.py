@@ -113,3 +113,14 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
+
+class OrderProduct(models.Model):
+    order_id = models.ForeignKey(Order, on_delete=models.CASCADE) #TODO Order.order_id,
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "Products in order %s" % self.id
+
+    class Meta:
+        verbose_name = 'Product in order'
+        verbose_name_plural = 'Products in order'
