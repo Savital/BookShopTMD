@@ -1,7 +1,6 @@
 from django.test import TestCase
 from BookShop.models import *
 import datetime
-from BookShop.forms import *
 
 class CustomerTestCase(TestCase):
     def setUp(self):
@@ -109,25 +108,3 @@ class CategoryTestCase(TestCase):
     def test_Category(self):
         linonse = Customer.objects.get(first_name="Alek", last_name="Kulner")
         self.assertEqual('Customer Alek Kulner', linonse.__str__())
-
-class TestRegistrationForm(TestCase):
-    def test_registration_form(self):
-        # test invalid data
-        invalid_data = {
-            "username": "user@test.com",
-            "password": "secret",
-            "confirm": "not secret"
-        }
-        form = RegistrationForm(data=invalid_data)
-        form.is_valid()
-        self.assertTrue(form.errors)
-
-        # test valid data
-        valid_data = {
-            "username": "user@test.com",
-            "password": "secret",
-            "confirm": "secret"
-        }
-        form = RegistrationForm(data=valid_data)
-        form.is_valid()
-        self.assertFalse(form.errors)
