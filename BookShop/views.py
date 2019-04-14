@@ -13,6 +13,28 @@ def contact(request):
 
 def product(request):
     assert isinstance(request, HttpRequest)
+    select = request.GET.get('select', '')
+
+    if select == 'max':
+        products = Product.objects.all().order_by('-price')[:3]
+    elif select == 'min':
+        products = Product.objects.all().order_by('price')[:3]
+    else:
+        products = Product.objects.all()
+    count = Product.objects.count()
+    orders = OrderProduct.objects.all().filter(order_id=Order.objects.all().filter(customer_id__first_name=request.user),
+                                               product_id=Product.objects.filter(price__in=[1,200]))
+    average = Product.objects.all().aggregate(Avg('price'))
+    logger.error(orders.query)
+    avg = average['price__avg']
+
+    return render(request, './product.html',
+                  {
+                      'products': products,
+                      'count': count,
+                      'orders_in': products,
+                      'average': avg,
+                  })
     return render(request, './contact.html', locals())
 
 class RegisterFormView(FormView):
