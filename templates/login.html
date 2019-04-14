@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic">
+</head>
+<body>
+<div class="container justify-content-center">
+    <div class="col-4" style="margin-top: 10%;margin-right: 33%;margin-left: 33%; width: auto;">
+        <form class="form-control bg-light form-group" action="" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-block btn-success" type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
