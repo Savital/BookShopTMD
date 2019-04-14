@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,12 +69,68 @@
               <a href="http://mail.yandex.ru"><i class="fa fa-envelope icon-box icon-xs"></i> linonse@yandex.ru</a>
             </address>
           </div>
+          <div>
+            <h2>Contact Hours</h2>
+            <address>
+              <p><i class="fa fa-clock-o icon-box icon-xs"></i> <span>Mon - Fri:</span> 9.00 AM - 6.00 PM</p>
+            </address>
+          </div>
+          <div>
+            <h2>Social Links</h2>
+            <a href="http://facebook.com"><i class="fa fa-facebook icon-round icon-xs"></i></a>
+            <a href="http://twitter.com"><i class="fa fa-twitter icon-round icon-xs"></i></a>
+            <a href="http://github.com"><i class="fa fa-github icon-round icon-xs"></i></a>
+          </div>
+        </div>
+        <div class="col-md-7 col-md-offset-1 justify-content-around">
+          <form class="form-control mb-lg-5" action="" role="form" method="post" name="contact-form" data-toggle="validator">
+            <div class="form-group">
+              <label for="name" class="sr-only">Name</label>
+              <input type="text" placeholder="Your Name" id="name" class="form-control" name="name" required data-error="Please enter your name">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="sr-only">Email</label>
+              <input type="email" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your Email">
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="sr-only">Subject</label>
+              <input type="text" placeholder="Your Subject" class="form-control" name="subject" required data-error="Please enter your message subject">
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="sr-only">Message</label>
+              <textarea placeholder="Your Message" rows="7" id="message" class="form-control" name="message" required data-error="Write your message"></textarea>
+            </div>
+
+            <button class="btn btn-success btn-lg" type="submit"><i class="fa fa-envelope"></i> Submit</button>
+            <div class="h3 text-center hidden"></div>
+            <div class="clearfix"></div>
+          </form>
         </div>
       </div>
     </div>
   </section>
     <!-- Footer -->
     <footer class="footer bg-dark text-white">
+
+        <!-- Social Icons -->
+        <div class="bg-primary">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-md-6 col-lg-7">
+                        <h4 class="mb-0 white-text">Get connected with us on social networks!</h4>
+                    </div>
+                    <div class="col-md-6 col-lg-5 text-right">
+                        <a href="http://facebook.com" style="color: greenyellow"><i class="fa fa-facebook white-text mr-lg-4 fa-2x"> </i></a>
+                        <a href="http://twitter.com" style="color: greenyellow"><i class="fa fa-twitter white-text mr-lg-4 fa-2x"> </i></a>
+                        <a href="http://google.com" style="color: greenyellow"><i class="fa fa-google-plus white-text mr-lg-4 fa-2x"> </i></a>
+                        <a href="http://instagram.com" style="color: greenyellow"><i class="fa fa-instagram white-text mr-lg-4 fa-2x"> </i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer Links -->
         <div class="container pt-5 pb-2">
