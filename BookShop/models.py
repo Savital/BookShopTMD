@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Customer(models.Model):
+class Customer(models.Model): # Пользователь
     customer_id = models.Index
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -13,7 +13,7 @@ class Customer(models.Model):
         verbose_name = 'Customer'
         verbose_name_plural = 'Customers'
 
-class Order(models.Model):
+class Order(models.Model): # Заказ
     order_id = models.Index
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE, default=0)
     date = models.DateField(auto_now_add=True, auto_now=False)
@@ -26,7 +26,7 @@ class Order(models.Model):
         verbose_name = 'Order'
         verbose_name_plural = 'Orders'
 
-class Producers(models.Model):
+class Producers(models.Model): # Продавцы
     producer_id = models.Index
     name = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
@@ -38,7 +38,7 @@ class Producers(models.Model):
         verbose_name = 'Producer'
         verbose_name_plural = 'Producers'
 
-class Product(models.Model):
+class Product(models.Model): # Товары
     product_id = models.Index
     name = models.CharField(max_length=20)
     description = models.TextField(blank=True, null=True, default=None)
@@ -53,7 +53,7 @@ class Product(models.Model):
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
 
-class Shop(models.Model):
+class Shop(models.Model): # Магазин
     shop_id = models.Index
     name = models.CharField(max_length=255)
     tel = models.CharField(max_length=12)
@@ -66,7 +66,7 @@ class Shop(models.Model):
         verbose_name = 'Shop'
         verbose_name_plural = 'Shops'
 
-class Relations(models.Model):
+class Relations(models.Model): # Отношения
     id = models.Index
     shop_id = models.ForeignKey(Shop, on_delete=models.CASCADE)
 
@@ -77,7 +77,7 @@ class Relations(models.Model):
         verbose_name = 'Relation'
         verbose_name_plural = 'Relations'
 
-class Stock(models.Model):
+class Stock(models.Model): # Склад
     shop_id = models.ForeignKey(Shop, on_delete=models.CASCADE)
     article = models.ForeignKey(Product, on_delete=models.CASCADE)
 
@@ -88,7 +88,7 @@ class Stock(models.Model):
         verbose_name = 'Stock'
         verbose_name_plural = 'Stocks'
 
-class Staff(models.Model):
+class Staff(models.Model): # Сотрудники
     id = models.Index
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -103,7 +103,7 @@ class Staff(models.Model):
         verbose_name = 'Staff'
         verbose_name_plural = 'Staff'
 
-class Category(models.Model):
+class Category(models.Model): # Категории
     category = models.CharField(max_length=30)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="Product")
 
@@ -114,7 +114,7 @@ class Category(models.Model):
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
 
-class OrderProduct(models.Model):
+class OrderProduct(models.Model): # Заказ товара
     order_id = models.ForeignKey(Order, on_delete=models.SET(Order.order_id)) #TODO Order.order_id,
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
 
