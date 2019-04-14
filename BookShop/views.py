@@ -8,9 +8,11 @@ from django.views.generic.base import View, logger
 
 from BookShop.models import *
 
+# Method for rendering contact.html
 def contact(request):
     return render(request, './contact.html', locals())
 
+# Method for rendering product.html
 def product(request):
     assert isinstance(request, HttpRequest)
     select = request.GET.get('select', '')
