@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'styles/bootstrap_css/bootstrap.css' %}">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+</head>
+<body>
+<div class="container justify-content-center">
+    <div class="col-6" style="margin-top: 10%;margin-right: 33%;margin-left: 33%; width: auto;">
+        <form class="form-control bg-light form-group" action="" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-block btn-success" type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
