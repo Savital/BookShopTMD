@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'styles/bootstrap_css/bootstrap.css' %}">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-expand-lg fixed-top bg-light">
+        <button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target=".navbar-collapse">
+             &#9776;
+         </button>
+         <div class="container-fluid">
+             <div class="navbar-header">
+                 <a class="navbar-brand" href="/">Booker</a>
+             </div>
+             <div class="navbar-collapse collapse">
+                 <ul class="nav navbar-nav nav-fill">
+                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Get back to home page">
+                         <a class="nav-link" href="/">Home</a>
+                     </li>
+                     <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Look for our products here">
+                         <a class="nav-link" href="/product/">Products</a>
+                     </li>
+                     <li class="nav-item active" data-toggle="tooltip" data-placement="bottom" title="Feed back">
+                         <a class="nav-link" href="/contact/">Contacts<span class="sr-only">(current)</span></a>
+                     </li>
+                     {% if user.is_authenticated %}
+                     <li class="nav-item btn btn-sm btn-outline-dark ml-3">
+                         <a class="nav-link" href="/logout/">Logout</a>
+                     </li>
+                     {% else %}
+                      <li class="nav-item btn btn-sm btn-outline-dark ml-3">
+                         <a class="nav-link" href="/login/">Login</a>
+                     </li>
+                     <li class="nav-item btn btn-sm btn-outline-danger ml-3">
+                         <a class="nav-link" href="/register/">Register</a>
+                     </li>
+                     {% endif %}
+                     <li class="nav-item">
+                         <a class="nav-link" href="/admin/">Login as admin</a>
+                     </li>
+                 </ul>
+            </div>
+         </div>
+     </nav>
+    <div class="my-5"></div>
+    <!-- Contact Section -->
+  <section class="contact-form-section section-padding bg-transparent" style="margin-top: 5%;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mb-50 centered">
+          <h2>Contact with us!</h2>
+          <p>Do you want to know more? We’d love to hear from you!</p>
+        </div>
+        <div class="col-md-4">
+          <div>
+            <h2>Office Location</h2>
+            <address>
+              <i class="fa fa-map-marker icon-box icon-xs"></i> 105005, г.Москва, 2-я Бауманская д.5, МГТУ им.Н.Э. Баумана, Кафедра ИУ-7<br>
+              <i class="fa fa-phone icon-box icon-xs"></i> +7 (499) 285-96-82<br>
+              <a href="http://mail.yandex.ru"><i class="fa fa-envelope icon-box icon-xs"></i> linonse@yandex.ru</a>
+            </address>
+          </div>
+          <div>
+            <h2>Contact Hours</h2>
+            <address>
+              <p><i class="fa fa-clock-o icon-box icon-xs"></i> <span>Mon - Fri:</span> 9.00 AM - 6.00 PM</p>
+            </address>
+          </div>
+          <div>
+            <h2>Social Links</h2>
+            <a href="http://facebook.com"><i class="fa fa-facebook icon-round icon-xs"></i></a>
+            <a href="http://twitter.com"><i class="fa fa-twitter icon-round icon-xs"></i></a>
+            <a href="http://github.com"><i class="fa fa-github icon-round icon-xs"></i></a>
+          </div>
+        </div>
+        <div class="col-md-7 col-md-offset-1 justify-content-around">
+          <form class="form-control mb-lg-5" action="" role="form" method="post" name="contact-form" data-toggle="validator">
+            <div class="form-group">
+              <label for="name" class="sr-only">Name</label>
+              <input type="text" placeholder="Your Name" id="name" class="form-control" name="name" required data-error="Please enter your name">
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="sr-only">Email</label>
+              <input type="email" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your Email">
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="sr-only">Subject</label>
+              <input type="text" placeholder="Your Subject" class="form-control" name="subject" required data-error="Please enter your message subject">
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="sr-only">Message</label>
+              <textarea placeholder="Your Message" rows="7" id="message" class="form-control" name="message" required data-error="Write your message"></textarea>
+            </div>
+
+            <button class="btn btn-success btn-lg" type="submit"><i class="fa fa-envelope"></i> Submit</button>
+            <div class="h3 text-center hidden"></div>
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+
+        <!-- Social Icons -->
+        <div class="bg-primary">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-md-6 col-lg-7">
+                        <h4 class="mb-0 white-text">Get connected with us on social networks!</h4>
+                    </div>
+                    <div class="col-md-6 col-lg-5 text-right">
+                        <a href="http://facebook.com" style="color: greenyellow"><i class="fa fa-facebook white-text mr-lg-4 fa-2x"> </i></a>
+                        <a href="http://twitter.com" style="color: greenyellow"><i class="fa fa-twitter white-text mr-lg-4 fa-2x"> </i></a>
+                        <a href="http://google.com" style="color: greenyellow"><i class="fa fa-google-plus white-text mr-lg-4 fa-2x"> </i></a>
+                        <a href="http://instagram.com" style="color: greenyellow"><i class="fa fa-instagram white-text mr-lg-4 fa-2x"> </i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container pt-5 pb-2">
+            <div class="row">
+
+                <div class="col-md-3 col-lg-4 col-xl-3">
+                    <h4 style="color: #ffb9fd"><b>Booker</b></h4>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <p>
+                        We tolerate to all nations and fighting racism.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    <h4 style="color: #ffb9fd">Contact</h4>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <p><i class="fa fa-home mr-3"></i>105005, г.Москва, 2-я Бауманская д.5, МГТУ им.Н.Э. Баумана, Кафедра ИУ-7</p>
+                    <p><i class="fa fa-envelope mr-3"></i> linonse@yandex.ru</p>
+                    <p><i class="fa fa-phone mr-3"></i> +7 (499) 285-96-82</p>
+                    <p><i class="fa fa-print mr-3"></i> +7 (499) 888-27-96</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- Footer Links-->
+
+        <hr class="bg-white mx-4 mt-2 mb-1">
+
+        <!-- Copyright-->
+        <div class="container-fluid">
+            <p class="text-center m-0 py-1">
+                © 2019 Copyright <a href="http://bmstu.ru" class="text-white">BMSTU</a>
+            </p>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
