@@ -2,13 +2,10 @@
 book shop web application
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These [@wiki](https://github.com/Savital/BookShopTMD/wiki) will help you with this project.
 
 ## Prerequisites
-What things you need to install the software and how to install them
-
-## Installing
-A step by step series of examples that tell you how to get a development env running
+What things you need to install the software and how to install them - [@requirements](https://github.com/Savital/BookShopTMD/blob/master/requirements.txt)
 
 ## Authors
 * Savostyanov Vitaliy [@Savital](https://github.com/Savital)
