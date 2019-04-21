@@ -1,6 +1,10 @@
 """@package models
-Documentation for this module.
-More details.
+Documentation for database models.
+A model is the single, definitive source of information about your data.
+It contains the essential fields and behaviors of the data you’re storing.
+Generally, each model maps to a single database table.
+Each model is a Python class that subclasses django.db.models.Model.
+Each attribute of the model represents a database field.
 """
 
 from django.db import models
@@ -9,7 +13,7 @@ from django.contrib.auth.models import User
 
 class Customer(models.Model):
     """Documentation for a class Customer.
-    More details. XXX
+    Customer is the person who order books.
     """
 
     customer_id = models.Index
@@ -24,7 +28,11 @@ class Customer(models.Model):
         verbose_name_plural = 'Customers'
 
 
-class Order(models.Model):  # Заказ
+class Order(models.Model):
+    """Documentation for a class Order.
+    Order is a class for ordering products list.
+    """
+
     order_id = models.Index
     customer_id = models.ForeignKey(
         Customer, on_delete=models.CASCADE, default=0)
@@ -39,7 +47,11 @@ class Order(models.Model):  # Заказ
         verbose_name_plural = 'Orders'
 
 
-class Producers(models.Model):  # Продавцы
+class Producers(models.Model):
+    """Documentation for a class Producers.
+    Producers make books for customers.
+    """
+
     producer_id = models.Index
     name = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
@@ -52,7 +64,11 @@ class Producers(models.Model):  # Продавцы
         verbose_name_plural = 'Producers'
 
 
-class Product(models.Model):  # Товары
+class Product(models.Model):
+    """Documentation for a class Product.
+    Product is a book itself.
+    """
+
     product_id = models.Index
     name = models.CharField(max_length=20)
     description = models.TextField(blank=True, null=True, default=None)
@@ -69,7 +85,11 @@ class Product(models.Model):  # Товары
         verbose_name_plural = 'Products'
 
 
-class Shop(models.Model):  # Магазин
+class Shop(models.Model):
+    """Documentation for a class Shop.
+    Shop is a place for ordering books.
+    """
+
     shop_id = models.Index
     name = models.CharField(max_length=255)
     tel = models.CharField(max_length=12)
@@ -83,7 +103,11 @@ class Shop(models.Model):  # Магазин
         verbose_name_plural = 'Shops'
 
 
-class Relations(models.Model):  # Отношения
+class Relations(models.Model):
+    """Documentation for a class Relations.
+    Relations is a entity for multiply connections.
+    """
+
     id = models.Index
     shop_id = models.ForeignKey(Shop, on_delete=models.CASCADE)
 
@@ -95,7 +119,11 @@ class Relations(models.Model):  # Отношения
         verbose_name_plural = 'Relations'
 
 
-class Stock(models.Model):  # Склад
+class Stock(models.Model):
+    """Documentation for a class Stock.
+    Stock is a place to hold goods.
+    """
+
     shop_id = models.ForeignKey(Shop, on_delete=models.CASCADE)
     article = models.ForeignKey(Product, on_delete=models.CASCADE)
 
@@ -107,7 +135,11 @@ class Stock(models.Model):  # Склад
         verbose_name_plural = 'Stocks'
 
 
-class Staff(models.Model):  # Сотрудники
+class Staff(models.Model):
+    """Documentation for a class Staff.
+    Staff is a place to manage personal.
+    """
+
     id = models.Index
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -123,7 +155,11 @@ class Staff(models.Model):  # Сотрудники
         verbose_name_plural = 'Staff'
 
 
-class Category(models.Model):  # Категории
+class Category(models.Model):
+    """Documentation for a class Category.
+    Category is a way to classify different kinds of books.
+    """
+
     category = models.CharField(max_length=30)
     product_id = models.ForeignKey(
         Product,
@@ -138,7 +174,11 @@ class Category(models.Model):  # Категории
         verbose_name_plural = 'Categories'
 
 
-class OrderProduct(models.Model):  # Заказ товара
+class OrderProduct(models.Model):
+    """Documentation for a class OrderProduct.
+    OrderProduct is a way to make orders.
+    """
+
     order_id = models.ForeignKey(Order, on_delete=models.SET(Order.order_id))
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
 
