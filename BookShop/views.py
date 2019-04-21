@@ -13,13 +13,11 @@ def contact(request):
     return render(request, './contact.html', locals())
 
 
-'''
-    Sort of Products by min
-        Parameters: min
-        Method: POST
-    Example:
-        >>>url(r'^product/?select=min', views.product, name='product')
-'''
+"""@package docstring
+Documentation for this module.
+
+More details.
+"""
 
 
 def product(request):
