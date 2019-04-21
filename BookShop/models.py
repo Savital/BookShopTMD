@@ -1,8 +1,17 @@
+"""@package models
+Documentation for this module.
+More details.
+"""
+
 from django.db import models
 from django.contrib.auth.models import User
 
 
-class Customer(models.Model):  # Пользователь
+class Customer(models.Model):
+    """Documentation for a class Customer.
+    More details. XXX
+    """
+
     customer_id = models.Index
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
