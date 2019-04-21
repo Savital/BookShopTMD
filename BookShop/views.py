@@ -1,3 +1,8 @@
+# @package pyexample
+#  Documentation for this module.
+#
+#  More details.
+
 from django.db.models import *
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -8,16 +13,13 @@ from django.views.generic.base import View, logger
 
 from BookShop.models import *
 
+# Documentation for a function.
+#
+#  More details.
+
 
 def contact(request):
     return render(request, './contact.html', locals())
-
-
-"""@package docstring
-Documentation for this module.
-
-More details.
-"""
 
 
 def product(request):
