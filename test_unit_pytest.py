@@ -10,6 +10,7 @@ class hello:
     def show(self):
         print(self.message)
 
+
 def test_hello_world():
     h = hello()
     h.set("test")

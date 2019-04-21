@@ -115,7 +115,7 @@ class Category(models.Model): # Категории
         verbose_name_plural = 'Categories'
 
 class OrderProduct(models.Model): # Заказ товара
-    order_id = models.ForeignKey(Order, on_delete=models.SET(Order.order_id)) #TODO Order.order_id,
+    order_id = models.ForeignKey(Order, on_delete=models.SET(Order.order_id))
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
