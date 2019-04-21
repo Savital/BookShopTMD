@@ -6,6 +6,7 @@ book shop web application
 
 ## Getting Started
 This [@wiki](https://github.com/Savital/BookShopTMD/wiki) will help you with this project.
+
 [@doxygen documentation](https://savital.github.io/BookShopTMD/)
 
 ## Prerequisites
