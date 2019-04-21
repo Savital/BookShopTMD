@@ -1,5 +1,7 @@
 # BookShopTMD
-book shop web application https://travis-ci.com/Savital/BookShopTMD.svg?branch=master
+book shop web application 
+[![Build Status](https://travis-ci.com/Savital/BookShopTMD.svg?branch=master)](https://travis-ci.com/Savital/BookShopTMD)
+
 
 ## Getting Started
 This [@wiki](https://github.com/Savital/BookShopTMD/wiki) will help you with this project.
