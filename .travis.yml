@@ -19,5 +19,11 @@ install:
 # command to run tests
 script:
   - python manage.py test
-  - pycodestyle --statistics -qq BookShop
+  - pycodestyle --statistics -qq BookShop/__init__.py
+  - pycodestyle --statistics -qq BookShop/admin.py
+  - pycodestyle --statistics -qq BookShop/apps.py
+  - pycodestyle --statistics -qq BookShop/models.py
+  - pycodestyle --statistics -qq BookShop/tests.py
+  - pycodestyle --statistics -qq BookShop/urls.py
+  - pycodestyle --statistics -qq BookShop/views.py
   - pycodestyle --statistics -qq BookShopTMD
