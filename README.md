@@ -1,8 +1,9 @@
 # BookShopTMD
-book shop web application
+book shop web application [@travis CI](https://travis-ci.com/Savital/BookShopTMD.svg?branch=master)
 
 ## Getting Started
-These [@wiki](https://github.com/Savital/BookShopTMD/wiki) will help you with this project.
+This [@wiki](https://github.com/Savital/BookShopTMD/wiki) will help you with this project.
+[@doxygen documentation](https://savital.github.io/BookShopTMD/)
 
 ## Prerequisites
 What things you need to install the software and how to install them - [@requirements](https://github.com/Savital/BookShopTMD/blob/master/requirements.txt)
