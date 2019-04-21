@@ -30,9 +30,9 @@ def product(request):
     count = Product.objects.count()
     orders = OrderProduct.objects.all().filter(
         order_id=Order.objects.all().filter(
-            customer_id__first_name=request.user), product_id=Product.objects.filter(
-            price__in=[
-                1, 200]))
+            customer_id__first_name=request.user),
+        product_id=Product.objects.filter(
+            price__in=[1, 200]))
     average = Product.objects.all().aggregate(Avg('price'))
     logger.error(orders.query)
     avg = average['price__avg']
