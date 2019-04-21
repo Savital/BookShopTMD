@@ -9,10 +9,14 @@ from django.views.generic.base import View, logger
 from BookShop.models import *
 
 # Method for rendering contact.html
+
+
 def contact(request):
     return render(request, './contact.html', locals())
 
 # Method for rendering product.html
+
+
 def product(request):
     assert isinstance(request, HttpRequest)
     select = request.GET.get('select', '')
@@ -24,8 +28,11 @@ def product(request):
     else:
         products = Product.objects.all()
     count = Product.objects.count()
-    orders = OrderProduct.objects.all().filter(order_id=Order.objects.all().filter(customer_id__first_name=request.user),
-                                               product_id=Product.objects.filter(price__in=[1,200]))
+    orders = OrderProduct.objects.all().filter(
+        order_id=Order.objects.all().filter(
+            customer_id__first_name=request.user), product_id=Product.objects.filter(
+            price__in=[
+                1, 200]))
     average = Product.objects.all().aggregate(Avg('price'))
     logger.error(orders.query)
     avg = average['price__avg']
@@ -39,6 +46,7 @@ def product(request):
                   })
     return render(request, './contact.html', locals())
 
+
 class RegisterFormView(FormView):
     form_class = UserCreationForm
     success_url = "/login/"
@@ -48,19 +56,19 @@ class RegisterFormView(FormView):
         form.save()
         return super(RegisterFormView, self).form_valid(form)
 
+
 class LoginFormView(FormView):
     form_class = AuthenticationForm
     template_name = "login.html"
-    success_url = "/" # Redirect to main page if success
+    success_url = "/"  # Redirect to main page if success
 
     def form_valid(self, form):
         self.user = form.get_user()
         login(self.request, self.user)
         return super(LoginFormView, self).form_valid(form)
 
+
 class LogoutView(View):
     def get(self, request):
         logout(request)
         return HttpResponseRedirect("/")
-
-

@@ -2,6 +2,7 @@ from django.test import TestCase
 from BookShop.models import *
 import datetime
 
+
 class CustomerTestCase(TestCase):
     def setUp(self):
         Customer.objects.create(first_name="Alek", last_name="Kulner")
@@ -26,6 +27,7 @@ class CustomerTestCase(TestCase):
         self.assertEqual('Customer Alex Pak', pak.__str__())
         self.assertEqual('Customer Serg Napreev', serg.__str__())
 
+
 class OrderTestCase(TestCase):
     def setUp(self):
         Customer.objects.create(first_name="Alek", last_name="Kulner")
@@ -37,6 +39,7 @@ class OrderTestCase(TestCase):
         order = Order.objects.get(customer_id=linonse)
         self.assertEqual('Order 1', order.__str__())
 
+
 class ProducersTestCase(TestCase):
     def setUp(self):
         Producers.objects.create(name="Kulner", country="Alexandria")
@@ -44,6 +47,7 @@ class ProducersTestCase(TestCase):
     def test_Producers(self):
         linonse = Producers.objects.get(name="Kulner", country="Alexandria")
         self.assertEqual('Producer 1', linonse.__str__())
+
 
 class ProductTestCase(TestCase):
     def setUp(self):
@@ -55,6 +59,7 @@ class ProductTestCase(TestCase):
         book = Product.objects.get(name="KulnerBook")
         self.assertEqual('Product 1', book.__str__())
 
+
 class ShopTestCase(TestCase):
     def setUp(self):
         Shop.objects.create(name="Alek", tel="+79256666666")
@@ -62,6 +67,7 @@ class ShopTestCase(TestCase):
     def test_Shop(self):
         shop = Shop.objects.get(name="Alek")
         self.assertEqual('Shop 1', shop.__str__())
+
 
 class RelationsTestCase(TestCase):
     def setUp(self):
@@ -74,6 +80,7 @@ class RelationsTestCase(TestCase):
         shop = Shop.objects.get(name="Alek", tel="+79256666666")
         relation = Relations.objects.get(shop_id=shop)
         self.assertEqual('Relation 1', relation.__str__())
+
 
 class StockTestCase(TestCase):
     def setUp(self):
@@ -93,13 +100,19 @@ class StockTestCase(TestCase):
 
         self.assertEqual('Shop 1', shop.__str__())
 
+
 class StaffTestCase(TestCase):
     def setUp(self):
-        Staff.objects.create(first_name="Alek", last_name="Kulner", passport="13", tel="666")
+        Staff.objects.create(
+            first_name="Alek",
+            last_name="Kulner",
+            passport="13",
+            tel="666")
 
     def test_Staff(self):
         linonse = Staff.objects.get(first_name="Alek", last_name="Kulner")
         self.assertEqual('Staff 1', linonse.__str__())
+
 
 class CategoryTestCase(TestCase):
     def setUp(self):

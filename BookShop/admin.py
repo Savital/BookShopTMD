@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 
+
 class CustomerAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Customer._meta.fields]
     search_fields = [field.name for field in Customer._meta.fields]
@@ -10,6 +11,7 @@ class CustomerAdmin(admin.ModelAdmin):
     class Meta:
         model = Customer
 
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Order._meta.fields]
     search_fields = [field.name for field in Order._meta.fields]
@@ -18,7 +20,8 @@ class OrderAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Order
-        
+
+
 class ProducersAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Producers._meta.fields]
     search_fields = [field.name for field in Producers._meta.fields]
@@ -27,7 +30,8 @@ class ProducersAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Producers
-      
+
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Product._meta.fields]
     search_fields = [field.name for field in Product._meta.fields]
@@ -36,6 +40,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Product
+
 
 class ShopAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Shop._meta.fields]
@@ -46,6 +51,7 @@ class ShopAdmin(admin.ModelAdmin):
     class Meta:
         model = Shop
 
+
 class RelationsAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Relations._meta.fields]
     search_fields = [field.name for field in Relations._meta.fields]
@@ -53,7 +59,8 @@ class RelationsAdmin(admin.ModelAdmin):
     exclude = []
 
     class Meta:
-        model = Relations    
+        model = Relations
+
 
 class StockAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Stock._meta.fields]
@@ -64,6 +71,7 @@ class StockAdmin(admin.ModelAdmin):
     class Meta:
         model = Stock
 
+
 class StaffAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Staff._meta.fields]
     search_fields = [field.name for field in Staff._meta.fields]
@@ -72,6 +80,7 @@ class StaffAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Staff
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Category._meta.fields]
@@ -82,6 +91,7 @@ class CategoryAdmin(admin.ModelAdmin):
     class Meta:
         model = Category
 
+
 class OrderProductAdmin(admin.ModelAdmin):
     list_display = [field.name for field in OrderProduct._meta.fields]
     search_fields = [field.name for field in OrderProduct._meta.fields]
@@ -89,8 +99,9 @@ class OrderProductAdmin(admin.ModelAdmin):
     exclude = []
 
     class Meta:
-        model = OrderProduct        
-        
+        model = OrderProduct
+
+
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Producers, ProducersAdmin)
