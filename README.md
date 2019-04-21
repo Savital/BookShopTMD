@@ -5,12 +5,12 @@ book shop web application
 
 
 ## Getting Started
-This [@wiki](https://github.com/Savital/BookShopTMD/wiki) will help you with this project.
+This [wiki](https://github.com/Savital/BookShopTMD/wiki) will help you with this project.
 
-Auto generated [@doxygen documentation](https://savital.github.io/BookShopTMD/).
+Auto generated [doxygen documentation](https://savital.github.io/BookShopTMD/).
 
 ## Prerequisites
-What things you need to install the software and how to install them - [@requirements](https://github.com/Savital/BookShopTMD/blob/master/requirements.txt)
+What things you need to install the software and how to install them - [requirements](https://github.com/Savital/BookShopTMD/blob/master/requirements.txt)
 
 ## Authors
 * Savostyanov Vitaliy [@Savital](https://github.com/Savital)
