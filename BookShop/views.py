@@ -8,13 +8,18 @@ from django.views.generic.base import View, logger
 
 from BookShop.models import *
 
-# Method for rendering contact.html
-
 
 def contact(request):
     return render(request, './contact.html', locals())
 
-# Method for rendering product.html
+
+'''
+    Sort of Products by min
+        Parameters: min
+        Method: POST
+    Example:
+        >>>url(r'^product/?select=min', views.product, name='product')
+'''
 
 
 def product(request):
@@ -44,7 +49,6 @@ def product(request):
                       'orders_in': products,
                       'average': avg,
                   })
-    return render(request, './contact.html', locals())
 
 
 class RegisterFormView(FormView):
