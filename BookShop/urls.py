@@ -1,3 +1,14 @@
+"""@package api
+Documentation for api.
+@brief Elegant URL scheme is an important in a high-quality Web application.
+Django lets you design URLs however you want, with no framework limitations.
+To design URLs you create a Python module informally called a URLconf.
+This module is a mapping between URL path expressions to views.
+This mapping can be as short or as long as needed.
+It can reference other mappings.
+And, because it’s pure Python code, it can be constructed dynamically.
+"""
+
 from django.conf.urls import url
 from django.views.generic import TemplateView
 from BookShop import views
