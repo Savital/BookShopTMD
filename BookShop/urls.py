@@ -9,49 +9,49 @@ It can reference other mappings.
 And, because it’s pure Python code, it can be constructed dynamically.
 
 @brief This patterns of requests
- Registration
+ Registration http://127.0.0.1:8000/register/
     Parameters: name, email, password
     Method: POST
  Example:
     >>>url(r'^register/$', views.RegisterFormView.as_view())
 
- Login
+ Login http://127.0.0.1:8000/login/
      Parameters: name/email, password
      Method: POST
  Example:
      >>>url(r'^login/$', views.LoginFormView.as_view())
 
- Logout
+ Logout http://127.0.0.1:8000/logout/
      Parameters: name/email, password
      Method: POST
  Example:
-     >>>url(r'^login/$', views.LoginFormView.as_view())
+     >>>url(r'^logout/$', views.LoginFormView.as_view())
 
- Home
+ Home http://127.0.0.1:8000/
      Parameters:
      Method: GET
  Example:
-     >>>url(r'^login/$', views.LoginFormView.as_view())
+     >>>url(r'^/$', views.LoginFormView.as_view())
 
- Products
+ Products http://127.0.0.1:8000/product/?select=all
     Parameters: ID, price, name
     Method: GET
  Example:
     >>>url(r'^product/$', views.product, name='product')
 
- Sort of Products by max
+ Sort of Products by max http://127.0.0.1:8000/product/?select=max
     Parameters: max
     Method: POST
  Example:
     >>>url(r'^product/?select=max', views.product, name='product')
 
- Sort of Products by min
+ Sort of Products by min http://127.0.0.1:8000/product/?select=min
     Parameters: min
     Method: POST
  Example:
     >>>url(r'^product/?select=min', views.product, name='product')
 
- Users
+ Users http://127.0.0.1:8000/contact/
     Parameters: name, email
     Method: GET
  Example:
