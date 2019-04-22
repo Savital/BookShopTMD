@@ -13,7 +13,7 @@ from django.conf.urls import url
 from django.views.generic import TemplateView
 from BookShop import views
 
-'''
+'''@brief
  This patterns of requests
 
  Registration
