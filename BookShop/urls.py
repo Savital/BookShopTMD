@@ -7,13 +7,8 @@ This module is a mapping between URL path expressions to views.
 This mapping can be as short or as long as needed.
 It can reference other mappings.
 And, because it’s pure Python code, it can be constructed dynamically.
-"""
 
-from django.conf.urls import url
-from django.views.generic import TemplateView
-from BookShop import views
-
-"""@brief This patterns of requests
+@brief This patterns of requests
  Registration
     Parameters: name, email, password
     Method: POST
@@ -61,6 +56,10 @@ from BookShop import views
     Method: GET
  Example:
     >>>url(r'^contact/$', views.contact, name='contact')"""
+
+from django.conf.urls import url
+from django.views.generic import TemplateView
+from BookShop import views
 
 
 app_name = 'BookShop'
