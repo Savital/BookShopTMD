@@ -1,3 +1,14 @@
+"""@package views
+Documentation for views.
+A view function, or view for short, is simply a Python function.
+That takes a Web request and returns a Web response.
+This response can be the HTML contents of a Web page.
+The view itself contains whatever arbitrary logic necessary to return response.
+This code can live anywhere you want, as long as it’s on your Python path.
+There’s no other requirement–no “magic,” so to speak.
+For the sake of putting the code somewhere.
+"""
+
 from django.db.models import *
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
@@ -8,13 +19,18 @@ from django.views.generic.base import View, logger
 
 from BookShop.models import *
 
-# Method for rendering contact.html
+# Documentation for a function contact.
+#
+#  This functions is to render contact.html.
 
 
 def contact(request):
     return render(request, './contact.html', locals())
 
-# Method for rendering product.html
+
+# Documentation for a function product.
+#
+#  This functions is to render product.html.
 
 
 def product(request):
@@ -44,7 +60,11 @@ def product(request):
                       'orders_in': products,
                       'average': avg,
                   })
-    return render(request, './contact.html', locals())
+
+
+# Documentation for a function RegisterFormView.
+#
+#  This functions is to render register.html.
 
 
 class RegisterFormView(FormView):
@@ -57,6 +77,11 @@ class RegisterFormView(FormView):
         return super(RegisterFormView, self).form_valid(form)
 
 
+# Documentation for a function LoginFormView.
+#
+#  This functions is to render login.html.
+
+
 class LoginFormView(FormView):
     form_class = AuthenticationForm
     template_name = "login.html"
@@ -66,6 +91,11 @@ class LoginFormView(FormView):
         self.user = form.get_user()
         login(self.request, self.user)
         return super(LoginFormView, self).form_valid(form)
+
+
+# Documentation for a function LogoutView.
+#
+#  This functions is to redirect to home.html.
 
 
 class LogoutView(View):

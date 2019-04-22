@@ -1,4 +1,6 @@
 language: python
+sudo: false
+
 python:
   - "3.6"
 # command to install dependencies
@@ -9,7 +11,11 @@ env:
 branches:
   only:
     - master
-    - dev
+
+addons:
+  apt:
+    packages:
+      - doxygen
 
 install:
   - pip install -q Django==$DJANGO_VERSION
@@ -27,3 +33,12 @@ script:
   - pycodestyle --statistics -qq BookShop/urls.py
   - pycodestyle --statistics -qq BookShop/views.py
   - pycodestyle --statistics -qq BookShopTMD
+  - doxygen Doxyfile
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: html
+  github_token: $GH_REPO_TOKEN
+  on:
+    branch: master
